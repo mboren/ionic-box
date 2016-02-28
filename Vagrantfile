@@ -34,6 +34,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 8100, host: 8100
   config.vm.network "forwarded_port", guest: 35729, host: 35729
 
+  # this is for Jupyter notebooks
+  config.vm.network "forwarded_port", guest: 8888, host: 8080, auto_correct: true
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
