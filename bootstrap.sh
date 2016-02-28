@@ -41,3 +41,25 @@ expect {
 '
 
 #sudo gem install sass
+
+# Anaconda comes with jupyter And a lot of useful Python data science stuff.
+# this is mostly borrowed from somebody else's vagrant scripts, but I don't
+# remember where it came from originally
+anaconda=Anaconda2-2.4.1-Linux-x86_64.sh
+cd /vagrant
+echo -e "\n\nDownloading Anaconda installer. This may take more than a few minutes."
+if [ ! -s $anaconda ]
+then
+    wget -q -o /dev/null - https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.1-Linux-x86_64.sh
+fi
+if [ -s $anaconda ]
+then
+  chmod +x $anaconda
+  ./$anaconda -b -p /opt/anaconda
+  cat >> /home/vagrant/.bashrc << END
+  # For anaconda
+  PATH=/opt/anaconda/bin:$PATH
+END
+else
+  echo "ERROR: Anaconda installer is not found"
+fi
