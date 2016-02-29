@@ -1,3 +1,5 @@
+This is a fork of a fork of the original Ionic Box project. I'm just adding a few bits that I use, but probably none of my changes will be generally applicable.
+
 This is a fork of the original Ionic Box project, aimed at updating package versions and addressing various dependency issues.
 
 I addressed issues with the outdated NodeJS packages in the official mainline Ubuntu repos, as well as a few other issues. These were causing npm dependency problems during and after provisioning. Using VirtualBox as the provider, I tested this on Windows and Mac hosts as capable of vagrant up, generating an app with the tabs template, serving it to the host machine, and packaging an Android build.
